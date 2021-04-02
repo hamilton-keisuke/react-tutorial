@@ -105,7 +105,9 @@ import './index.css';
         const desc = move ? `Go to move # ${move} (${step.col}, ${step.row})` : 'Go to game start';
         return (
           <li key={move}>
-            <button onClick={() => this.jumpTo(move)}>{desc}</button>
+            <button
+              className={this.state.stepNumber === move ? 'selected-step' : ''}
+              onClick={() => this.jumpTo(move)}>{desc}</button>
           </li>
         );
       });
